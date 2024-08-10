@@ -1,0 +1,62 @@
+/* 全体のスタイル */
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #6db33f;
+    overflow: hidden; /* スクロールバーを非表示にする */
+    display: flex;
+    flex-direction: column; /* 縦方向に要素を並べる */
+    justify-content: center; /* 上下中央寄せ */
+    align-items: center; /* 横方向のセンタリング */
+    font-family: 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', '游ゴシック体', 'Yu Gothic', sans-serif; /* フォントの設定 */
+    margin-top: -50px; /* 上に20px移動 */
+}
+
+/* 画像のスタイル */
+img {
+    width: 30vw;       /* ビューポート幅の30% */
+    height: auto;      /* アスペクト比を保ちながら高さを自動調整 */
+    max-width: 100%;   /* デバイスに合わせて最大幅を設定 */
+    object-fit: cover; /* 画像のアスペクト比を保ちながら表示 */
+    animation: spin 8s linear infinite; /* 8秒で1回転するアニメーションを設定 */
+    will-change: transform; /* パフォーマンス向上のための設定 */
+    margin-bottom: 40px; /* テキストとの間に余白を追加 */
+}
+
+/* テキストのスタイル */
+h1 {
+    margin: 0; /* 上部の余白をなしに設定 */
+    font-size: 2.5rem; /* フォントサイズを設定 */
+    font-weight: 300; /* 細めのフォントウェイトに設定 */
+    color: #ffffff; /* 白色でテキストを表示 */
+}
+
+/* アニメーション定義 */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* メディアクエリでレスポンシブ対応 */
+@media (max-width: 768px) {
+    img {
+        width: 50vw; /* 小さいデバイスで画像を大きめに */
+    }
+    h1 {
+        font-size: 1.5rem; /* 小さいデバイスで文字を小さめに */
+    }
+}
+
+@media (max-width: 480px) {
+    img {
+        width: 70vw; /* 非常に小さいデバイスで画像をさらに大きめに */
+    }
+    h1 {
+        font-size: 1.2rem; /* 非常に小さいデバイスで文字をさらに小さめに */
+    }
+}
+
